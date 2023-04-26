@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Mostrar rodando
-         run: echo teste
+         run: echo "teste"
+       - name: Mostrar rodando
+         run: echo "${{ github.event_name }} foi disparado"
     
   segundo:
      runs-on: windows-latest
@@ -24,3 +26,10 @@ jobs:
            VAR2: GitHub Actions
           run: echo $VAR1 $VAR2
       
+  Terceiro:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Terceiro
+         run: |
+           run: echo "${{ github.event_name }} foi disparado"
+           echo "No ${{runner.os}}"
